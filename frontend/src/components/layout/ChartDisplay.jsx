@@ -9,11 +9,7 @@ import {
 
 export const description = "A line chart";
 
-const chartData = [
-  { day: "Sunday", wind: 9 },
-  { day: "Monday", wind: 12 },
-  { day: "Tuesday", wind: 18 },
-];
+const chartData = [{ wind: 9 }, { wind: 12 }, { wind: 18 }];
 
 const chartConfig = {
   desktop: {
@@ -42,13 +38,6 @@ export function ChartLineDefault() {
             }}
           >
             <CartesianGrid vertical={false} horizontal={false} />
-            <XAxis
-              dataKey="day"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
