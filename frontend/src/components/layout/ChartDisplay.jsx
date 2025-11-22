@@ -22,9 +22,7 @@ export function ChartLineDefault() {
   return (
     <Card>
       <CardHeader className={"p-0"}>
-        <p className="text-start w-fit h-fit bg-white/10 border-0 rounded-full text-white/40 px-5 py-1">
-          25%
-        </p>
+        <p className="text-cards text-white/40">25%</p>
       </CardHeader>
       <CardContent className={"p-0"}>
         <ChartContainer config={chartConfig}>
