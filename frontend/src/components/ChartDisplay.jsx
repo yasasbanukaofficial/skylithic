@@ -1,6 +1,6 @@
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   ChartContainer,
   ChartTooltip,
@@ -10,31 +10,36 @@ import {
 export const description = "A line chart";
 
 const chartData = [
-  { day: "Saturday", temperature: 27 },
-  { day: "Sunday", temperature: 22 },
-  { day: "Monday", temperature: 25 },
+  { day: "Sunday", wind: 9 },
+  { day: "Monday", wind: 12 },
+  { day: "Tuesday", wind: 18 },
 ];
 
 const chartConfig = {
   desktop: {
     label: "Weather",
-    color: "var(--chart-1)",
+    color: "var(--chart-2)",
   },
 };
 
 export function ChartLineDefault() {
   return (
     <Card>
-      <CardContent>
+      <CardHeader className={"p-0"}>
+        <p className="text-start w-fit h-fit bg-white/10 border-0 rounded-full text-white/40 px-5 py-1">
+          25%
+        </p>
+      </CardHeader>
+      <CardContent className={"p-0"}>
         <ChartContainer config={chartConfig}>
           <LineChart
             accessibilityLayer
             data={chartData}
             margin={{
+              top: 30,
               left: 12,
               right: 12,
             }}
-            style={{ maxHeight: "150px" }}
           >
             <CartesianGrid vertical={false} horizontal={false} />
             <XAxis
@@ -49,11 +54,11 @@ export function ChartLineDefault() {
               content={<ChartTooltipContent hideLabel />}
             />
             <Line
-              dataKey="temperature"
+              dataKey="wind"
               type="natural"
               stroke="var(--color-desktop)"
               strokeWidth={4}
-              dot={true}
+              dot={false}
             />
           </LineChart>
         </ChartContainer>
