@@ -1,5 +1,6 @@
 import { ChartLineDefault } from "./components/layout/ChartDisplay";
 import { GeoHeader } from "./components/layout/GeoHeader";
+import { WeatherView } from "./components/layout/WeatherView";
 
 function App() {
   return (
@@ -18,7 +19,11 @@ function App() {
         </div>
 
         <div className="flex-2/4 right-section py-6">
-          <GeoHeader />
+          <div className="flex flex-col gap-9">
+            <GeoHeader />
+            <WeatherView />
+          </div>
+          <div></div>
         </div>
       </div>
     </div>
