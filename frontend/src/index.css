@@ -1,7 +1,10 @@
-@import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import "tailwindcss";
 
 @theme {
   --font-logo: "Quicksand", sans-serif;
+}
+
+.glassmorphism {
+  @apply bg-white/10 backdrop-blur-md border border-white/10 rounded-xl shadow-lg text-white p-6;
 }
