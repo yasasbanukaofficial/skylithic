@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { RangeCard } from "../ui/RangeCard";
+import { RangeCard } from "../modules/RangeCard";
 
 export const WeatherView = () => {
-  const [temperature, setTemperature] = useState("18 °");
+  const [temperature, setTemperature] = useState("18°");
   const [range, setRange] = useState("H");
   const [weatherDescription, setweatherDescription] = useState(
     "Stormy with party cloudy"
