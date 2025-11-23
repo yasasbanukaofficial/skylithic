@@ -3,10 +3,11 @@ import { GeoHeader } from "./GeoHeader";
 import { WeatherView } from "./WeatherView";
 import { SearchCard } from "../modules/SearchCard";
 import { WeatherCard } from "../modules/WeatherCard";
+import { DayWeatherView } from "../modules/DayWeatherView";
 
 export const MainContent = () => {
   return (
-    <div className="flex-2/4 right-section py-6 flex flex-col h-full">
+    <div className="flex-2/4 right-section py-6 flex flex-col h-full gap-10">
       <div className="flex flex-row">
         <div className="flex flex-col gap-9 flex-1">
           <GeoHeader />
@@ -27,7 +28,11 @@ export const MainContent = () => {
           </div>
         </div>
       </div>
-      <div className="flex-2/4">Line Graph History</div>
+      <div className="flex-2/4 flex gap-10 pt-20">
+        <DayWeatherView />
+        <DayWeatherView />
+        <DayWeatherView />
+      </div>
     </div>
   );
 };
