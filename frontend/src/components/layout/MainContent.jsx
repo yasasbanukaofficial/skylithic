@@ -9,12 +9,14 @@ export const MainContent = ({ handleSearch, weather }) => {
   const [location, setLocation] = useState("");
   const [temp, setTemp] = useState("");
   const [condition, setCondition] = useState("");
+  const [forecasts, setForecasts] = useState([]);
 
   useEffect(() => {
     if (weather && weather.current) {
       setLocation(weather.current.location);
       setTemp(weather.current.temp);
       setCondition(weather.current.condition);
+      setForecasts(weather.forecastCards);
     }
   }, [weather]);
 
@@ -35,15 +37,19 @@ export const MainContent = ({ handleSearch, weather }) => {
             <p className="text-white/30">Recently Searched</p>
             <div className="flex gap-2">
               <WeatherCard />
-              <WeatherCard />
             </div>
           </div>
         </div>
       </div>
       <div className="flex-2/4 flex gap-10 pt-20">
-        <DayWeatherView />
-        <DayWeatherView />
-        <DayWeatherView />
+        {forecasts.map((dayData, index) => (
+          <DayWeatherView
+            key={`day-${index}`}
+            label={dayData.label}
+            temp={dayData.temp}
+            wind={dayData.wind}
+          />
+        ))}
       </div>
     </div>
   );
