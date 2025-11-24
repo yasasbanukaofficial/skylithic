@@ -32,7 +32,7 @@ export const MainContent = ({ handleSearch, weather }) => {
         <div className="flex flex-col gap-9 flex-1">
           <GeoHeader location={location || "Location"} />
           <WeatherView
-            temperature={temp + "°C" || "+0 °C"}
+            temperature={temp || "+0°C"}
             condition={condition || "Nothing unusual"}
           />
         </div>
@@ -55,7 +55,7 @@ export const MainContent = ({ handleSearch, weather }) => {
           <DayWeatherView
             key={`day-${index}`}
             label={dayData.label}
-            temp={dayData.temp + "°C"}
+            temp={dayData.temp}
             wind={dayData.wind + " km/h"}
           />
         ))}
