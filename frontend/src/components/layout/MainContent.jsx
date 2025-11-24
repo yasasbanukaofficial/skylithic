@@ -12,7 +12,7 @@ export const MainContent = ({ handleSearch, weather }) => {
   const [forecasts, setForecasts] = useState([
     {
       label: "",
-      temp: "0°C",
+      temp: "0",
       wind: "0km/h",
     },
   ]);
@@ -20,7 +20,7 @@ export const MainContent = ({ handleSearch, weather }) => {
   useEffect(() => {
     if (weather && weather.current) {
       setLocation(weather.current.location);
-      setTemp(weather.current.temp);
+      setTemp(weather.current.temp + "°C");
       setCondition(weather.current.condition);
       setForecasts(weather.forecastCards);
     }
@@ -55,8 +55,8 @@ export const MainContent = ({ handleSearch, weather }) => {
           <DayWeatherView
             key={`day-${index}`}
             label={dayData.label}
-            temp={dayData.temp}
-            wind={dayData.wind + " km/h"}
+            temp={dayData.temp + "°C"}
+            wind={dayData.wind + "km/h"}
           />
         ))}
       </div>

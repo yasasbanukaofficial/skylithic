@@ -5,6 +5,13 @@ const search = async (req, res, next) => {
     const query = req.params["city"];
     const data = await fetchWeather(query);
 
+    if (!data) {
+      res.status(400).json({
+        success: false,
+        message: "Error when fetching weather data",
+      });
+    }
+
     res.status(200).json({
       success: true,
       message: "Weather details have been fetched",
