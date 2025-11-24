@@ -1,7 +1,17 @@
 const numParser = (valueString) => {
   if (!valueString || typeof valueString !== "string") return 0;
-  const match = valueString.trim().match(/^[+-]?\d+/);
-  return match ? parseInt(match[0], 10) : 0;
+
+  const match = valueString.trim().match(/[+-]?\d+/);
+  if (!match) {
+    return 0;
+  }
+
+  const signedNumberString = match[0];
+  if (signedNumberString.startsWith("-")) {
+    return signedNumberString;
+  }
+
+  return parseInt(signedNumberString, 10);
 };
 
 const dateIdentifier = (offset) => {
