@@ -13,7 +13,7 @@ export const WeatherView = ({ temperature, condition }) => {
           <RangeCard temperature={temperature} range={range} />
         </div>
       </div>
-      <h1 className="h-60 flex items-end justify-start text-6xl/17 text-normal text-white/30 font-description max-w-125">
+      <h1 className="h-60 flex items-center justify-start text-6xl/17 text-normal text-white/30 font-description max-w-125">
         {condition}
       </h1>
     </div>

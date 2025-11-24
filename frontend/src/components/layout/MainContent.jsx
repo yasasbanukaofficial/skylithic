@@ -25,7 +25,10 @@ export const MainContent = ({ handleSearch, weather }) => {
       <div className="flex flex-row">
         <div className="flex flex-col gap-9 flex-1">
           <GeoHeader location={location || "Location"} />
-          <WeatherView temperature={temp || "+0 °C"} condition={condition} />
+          <WeatherView
+            temperature={temp || "+0 °C"}
+            condition={condition || "Nothing unusual"}
+          />
         </div>
         <div className="flex-1 flex flex-col align-middle items-end gap-12">
           <SearchCard onSearch={handleSearch} />
