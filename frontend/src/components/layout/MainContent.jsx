@@ -9,7 +9,13 @@ export const MainContent = ({ handleSearch, weather }) => {
   const [location, setLocation] = useState("");
   const [temp, setTemp] = useState("");
   const [condition, setCondition] = useState("");
-  const [forecasts, setForecasts] = useState([]);
+  const [forecasts, setForecasts] = useState([
+    {
+      label: "",
+      temp: "0°C",
+      wind: "0km/h",
+    },
+  ]);
 
   useEffect(() => {
     if (weather && weather.current) {

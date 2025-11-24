@@ -9,11 +9,11 @@ import {
 
 export const description = "A line chart";
 
-const chartData = [
-  { day: "Sunday", wind: 9 },
-  { day: "Monday", wind: 12 },
-  { day: "Tuesday", wind: 18 },
-];
+// const chartData = [
+//   { day: "Sunday", temp: 9 },
+//   { day: "Monday", temp: 12 },
+//   { day: "Tuesday", temp: 18 },
+// ];
 
 const chartConfig = {
   desktop: {
@@ -22,7 +22,7 @@ const chartConfig = {
   },
 };
 
-export function ChartLineDefault() {
+export function ChartLineDefault({ chartData }) {
   return (
     <Card>
       <CardHeader className={"p-0"}>
@@ -52,7 +52,7 @@ export function ChartLineDefault() {
               content={<ChartTooltipContent hideLabel />}
             />
             <Line
-              dataKey="wind"
+              dataKey="temp"
               type="natural"
               stroke="var(--color-desktop)"
               strokeWidth={4}

@@ -8,8 +8,8 @@ const dataFormatter = (data, query) => {
       wind: data.wind,
     },
     chartData: forecast.slice(0, 3).map((dayData, index) => ({
-      label: `Day ${dayData.day || index + 1}`,
-      value: dayData.temperature,
+      day: `Day ${dayData.day || index + 1}`,
+      temp: dayData.temperature,
     })),
 
     forecastCards: forecast.slice(0, 3).map((dayData, index) => ({
