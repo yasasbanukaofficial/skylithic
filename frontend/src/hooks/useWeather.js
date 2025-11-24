@@ -13,7 +13,7 @@ const useWeather = (city) => {
       setWeather(null);
       setError(null);
 
-      const url = `${BACKEND_BASE_URL}?city=${city}`;
+      const url = `${BACKEND_BASE_URL}/${city}`;
 
       try {
         const response = await fetch(url);
