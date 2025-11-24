@@ -5,7 +5,7 @@ import { SearchCard } from "../modules/SearchCard";
 import { WeatherCard } from "../modules/WeatherCard";
 import { DayWeatherView } from "../modules/DayWeatherView";
 
-export const MainContent = () => {
+export const MainContent = ({ handleSearch }) => {
   return (
     <div className="flex-2/4 right-section py-6 flex flex-col h-full gap-10">
       <div className="flex flex-row">
@@ -14,7 +14,7 @@ export const MainContent = () => {
           <WeatherView />
         </div>
         <div className="flex-1 flex flex-col align-middle items-end gap-12">
-          <SearchCard />
+          <SearchCard onSearch={handleSearch} />
           <p className="max-w-85 text-justify">
             Note: The data provide here might be slightly inaccurate but it is
             somewhat similar to the real data.
