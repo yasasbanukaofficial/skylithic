@@ -1,7 +1,7 @@
 import { MapPin } from "lucide-react";
 import React from "react";
 
-export const GeoHeader = () => {
+export const GeoHeader = ({ location }) => {
   const date = new Date();
 
   const dateFormatOptions = {
@@ -19,7 +19,7 @@ export const GeoHeader = () => {
     <div className="flex flex-col lg:flex-row gap-2 align-middle">
       <div className="flex flex-row gap-2 w-fit">
         <MapPin />
-        <p className="font-medium">Brooklyn, New York, USA</p>
+        <p className="font-medium">{location}</p>
       </div>
       <p className="text-white/50">( {formattedDate} )</p>
     </div>

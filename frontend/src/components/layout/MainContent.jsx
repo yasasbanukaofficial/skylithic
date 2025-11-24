@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GeoHeader } from "./GeoHeader";
 import { WeatherView } from "./WeatherView";
 import { SearchCard } from "../modules/SearchCard";
 import { WeatherCard } from "../modules/WeatherCard";
 import { DayWeatherView } from "../modules/DayWeatherView";
 
-export const MainContent = ({ handleSearch }) => {
+export const MainContent = ({ handleSearch, weather }) => {
+  const [location, setLocation] = useState("");
+  const [temp, setTemp] = useState("");
+  const [condition, setCondition] = useState("");
+
+  useEffect(() => {
+    if (weather && weather.current) {
+      setLocation(weather.current.location);
+      setTemp(weather.current.temp);
+      setCondition(weather.current.condition);
+    }
+  }, [weather]);
+
   return (
     <div className="flex-2/4 right-section py-6 flex flex-col h-full gap-10">
       <div className="flex flex-row">
         <div className="flex flex-col gap-9 flex-1">
-          <GeoHeader />
-          <WeatherView />
+          <GeoHeader location={location || "Location"} />
+          <WeatherView temperature={temp || "+0 °C"} condition={condition} />
         </div>
         <div className="flex-1 flex flex-col align-middle items-end gap-12">
           <SearchCard onSearch={handleSearch} />

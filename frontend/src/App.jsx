@@ -19,7 +19,7 @@ function App() {
 
       <div className="flex flex-col-reverse lg:flex-row gap-12 px-8 py-8 md:py-13 md:px-15 h-full">
         <SideBar />
-        <MainContent handleSearch={handleSearch} />
+        <MainContent handleSearch={handleSearch} weather={weather} />
       </div>
     </div>
   );
