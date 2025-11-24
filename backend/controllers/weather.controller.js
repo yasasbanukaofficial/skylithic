@@ -2,7 +2,8 @@ import fetchWeather from "../services/weather.service.js";
 
 const search = async (req, res, next) => {
   try {
-    const data = await fetchWeather("Colombo");
+    const query = req.params["city"];
+    const data = await fetchWeather(query);
 
     res.status(200).json({
       success: true,

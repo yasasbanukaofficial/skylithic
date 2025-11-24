@@ -2,6 +2,6 @@ import { Router } from "express";
 import search from "../controllers/weather.controller.js";
 const weatherRoutes = Router();
 
-weatherRoutes.get("/search", search);
+weatherRoutes.get("/:city", search);
 
 export default weatherRoutes;
