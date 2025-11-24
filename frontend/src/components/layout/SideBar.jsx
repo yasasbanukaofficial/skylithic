@@ -6,7 +6,9 @@ export const SideBar = ({ weather }) => {
 
   useEffect(() => {
     if (weather && weather.chartData) {
-      setChartData(weather.chartData);
+      const placeholder = { label: "", temp: "0" };
+      const formattedChartData = [placeholder, ...weather.chartData];
+      setChartData(formattedChartData);
     }
   }, [weather]);
 

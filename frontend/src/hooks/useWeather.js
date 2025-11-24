@@ -20,7 +20,6 @@ const useWeather = (city) => {
         const result = await response.json();
 
         setWeather(result.data);
-        console.log(result.data);
       } catch (error) {}
     };
     fetchData();

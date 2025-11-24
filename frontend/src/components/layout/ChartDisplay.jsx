@@ -6,14 +6,9 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { useEffect, useState } from "react";
 
 export const description = "A line chart";
-
-// const chartData = [
-//   { day: "Sunday", temp: 9 },
-//   { day: "Monday", temp: 12 },
-//   { day: "Tuesday", temp: 18 },
-// ];
 
 const chartConfig = {
   desktop: {
@@ -23,10 +18,25 @@ const chartConfig = {
 };
 
 export function ChartLineDefault({ chartData }) {
+  const [avg, setAvg] = useState("0.0%");
+  useEffect(() => {
+    if (!chartData || chartData.length < 2) {
+      return;
+    }
+    const increasedValue = () => {
+      const original = chartData[1].temp;
+      const current = chartData[2].temp;
+      const percentage =
+        (((current - original) / original) * 100).toFixed(2) + "%";
+      setAvg(percentage);
+    };
+    increasedValue();
+  }, [chartData]);
+
   return (
     <Card>
       <CardHeader className={"p-0"}>
-        <p className="text-cards text-white/40">25%</p>
+        <p className="text-cards text-white/40">{avg}</p>
       </CardHeader>
       <CardContent className={"p-0"}>
         <ChartContainer config={chartConfig}>
@@ -41,7 +51,7 @@ export function ChartLineDefault({ chartData }) {
           >
             <CartesianGrid vertical={false} horizontal={false} />
             <XAxis
-              dataKey="day"
+              dataKey="label"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
