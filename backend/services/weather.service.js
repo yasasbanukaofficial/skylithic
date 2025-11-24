@@ -14,7 +14,6 @@ const fetchWeather = async (query) => {
     if (!rawData.temperature || !rawData.description) {
       throw new Error("City not found or data structure is invalid.");
     }
-
     return dataFormatter(rawData, query);
   } catch (error) {
     throw error;

@@ -1,6 +1,6 @@
 const numParser = (valueString) => {
-  if (!valueString || typeof valueString !== "string") return null;
-  const match = valueString.trim().match(/^-?\d+/);
+  if (!valueString || typeof valueString !== "string") return 0;
+  const match = valueString.trim().match(/^[+-]?\d+/);
   return match ? parseInt(match[0], 10) : 0;
 };
 
@@ -20,12 +20,12 @@ const dataFormatter = (data, query) => {
       wind: numParser(data.wind),
     },
 
-    chartData: forecast.slice(0, 3).map((dayData, index) => ({
+    chartData: forecast.slice(0, 2).map((dayData, index) => ({
       label: dateIdentifier(index + 1),
       temp: numParser(dayData.temperature),
     })),
 
-    forecastCards: forecast.slice(0, 3).map((dayData, index) => ({
+    forecastCards: forecast.slice(0, 2).map((dayData, index) => ({
       label: dateIdentifier(index + 1),
       temp: numParser(dayData.temperature),
       wind: numParser(dayData.wind),
