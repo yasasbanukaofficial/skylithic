@@ -10,7 +10,6 @@ function App() {
 
   const handleSearch = (newCity) => {
     setCity(newCity);
-    console.log(newCity);
   };
 
   return (
