@@ -16,7 +16,7 @@ export const GeoHeader = ({ location }) => {
   ).format(date);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-2 align-middle">
+    <div className="flex flex-row gap-2 align-middle">
       <div className="flex flex-row gap-2 w-fit">
         <MapPin />
         <p className="font-medium">{location}</p>

@@ -27,7 +27,7 @@ export const SearchCard = ({ onSearch }) => {
   };
 
   return (
-    <div className="glassmorphism w-fit h-fit rounded-full flex p-4">
+    <div className="glassmorphism w-full lg:w-fit h-fit rounded-full flex justify-between py-4 px-5">
       <input
         placeholder="Enter a city"
         className="focus:outline-none"
