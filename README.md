@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="frontend/public/sun-and-cloud.png" alt="logo" width="100px"/>
+  <img src="frontend/public/sunny.png" alt="logo" width="50px"/>
   <h1>Skylithic Weather</h1> 
   <p>
     A modern and responsive weather forecast application that provides real-time weather information for any city.
