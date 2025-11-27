@@ -1,4 +1,3 @@
-
 <div align="center">
   <img src="frontend/public/sunny.png" alt="logo" width="50px"/>
   <h1>Skylithic Weather</h1> 
@@ -15,30 +14,30 @@ Skylithic Weather is a web application built with the React + Vite, Express JS a
 
 ## ✨ Features
 
--   **Real-time Weather Data:** Get up-to-the-minute weather information.
--   **City Search:** Find weather forecasts for any city around the world.
--   **Data Visualization:** Interactive charts to visualize weather patterns.
--   **Responsive Design:** A clean and modern UI that works on all devices.
+- **Real-time Weather Data:** Get up-to-the-minute weather information.
+- **City Search:** Find weather forecasts for any city around the world.
+- **Data Visualization:** Interactive charts to visualize weather patterns.
+- **Responsive Design:** A clean and modern UI that works on all devices.
 
 ## 🚀 Tech Stack
 
 ### Frontend
 
--   [React](https://reactjs.org/)
--   [Vite](https://vitejs.dev/)
--   [Tailwind CSS](https://tailwindcss.com/)
--   [Recharts](https://recharts.org/)
--   [Lucide React](https://lucide.dev/guide/packages/lucide-react) (for icons)
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Recharts](https://recharts.org/)
+- [Lucide React](https://lucide.dev/guide/packages/lucide-react) (for icons)
 
 ### Backend
 
--   [Node.js](https://nodejs.org/)
--   [Express](https://expressjs.com/)
--   [CORS](https://www.npmjs.com/package/cors)
+- [Node.js](https://nodejs.org/)
+- [Express](https://expressjs.com/)
+- [CORS](https://www.npmjs.com/package/cors)
 
 ### Monorepo
 
--   [Turborepo](https://turbo.build/repo)
+- [Turborepo](https://turbo.build/repo)
 
 ## 🏁 Getting Started
 
@@ -46,8 +45,8 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
--   [Node.js](https://nodejs.org/en/download/) (v14 or higher)
--   [npm](https://www.npmjs.com/get-npm)
+- [Node.js](https://nodejs.org/en/download/) (v14 or higher)
+- [npm](https://www.npmjs.com/get-npm)
 
 ### Installation
 
@@ -62,7 +61,7 @@ To get a local copy up and running, follow these simple steps.
 3.  You will need an API key from a weather provider to run the backend. Create a `.env` file in the `backend/` directory and add your API key like this:
     ```
     API_KEY=your_api_key
-    PORT=3000
+    PORT=5500
     ```
 
 ### Running the Application
@@ -75,18 +74,17 @@ npm run dev
 
 This will start the Vite development server for the frontend and the Nodemon server for the backend.
 
--   Frontend will be available at `http://localhost:5173`
--   Backend will be available at `http://localhost:3000`
+- Frontend will be available at `http://localhost:5173`
+- Backend will be available at `http://localhost:5500`
 
 ## 📂 Project Structure
 
 This project is a monorepo managed by Turborepo.
 
--   `backend/`: Contains the Express.js server.
--   `frontend/`: Contains the React client application.
--   `(root)/`: (Optional) For shared code between the frontend and backend.
+- `backend/`: Contains the Express.js server.
+- `frontend/`: Contains the React client application.
+- `(root)/`: (Optional) For shared code between the frontend and backend.
 
 ## 🙏 Acknowledgements
 
--   [weather-api repo](https://github.com/robertoduessmann/weather-api)
-
+- [weather-api repo](https://github.com/robertoduessmann/weather-api)
